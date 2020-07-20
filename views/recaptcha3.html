@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Recaptcha3</title>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+<body>
+
+        Recaptcha 3 Form
+        <br />
+
+<script>
+   function onSubmit(token) {
+     console.log("Test");
+     document.getElementById("demo-form").submit();
+   }
+ </script>
+
+    <form id='demo-form' action='#' method='POST'>
+     <button class="g-recaptcha"
+       data-sitekey="6LfKvrMZAAAAAANCpRz3YR8PzHREf98q0zABF7hq"
+       data-callback="onSubmit" 
+       data-action="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
+
