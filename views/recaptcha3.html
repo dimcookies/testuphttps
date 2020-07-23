@@ -1,26 +1,40 @@
 <html>
 <head>
 	<title>Recaptcha3</title>
-	<script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
+	<script src="https://www.recaptcha.net/recaptcha/api.js?render=6LfKvrMZAAAAAANCpRz3YR8PzHREf98q0zABF7hq
+" async defer></script>
 </head>
 <body>
 
         Recaptcha 3 Form
         <br />
 
-<script>
+<!--<script>
    function onSubmit(token) {
      console.log("Test");
      document.getElementById("demo-form").submit();
    }
- </script>
+ </script>-->
+<script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LfKvrMZAAAAAANCpRz3YR8PzHREf98q0zABF7hq
+', {action: 'submit'}).then(function(token) {
+              console.log("Test");
+              // Add your logic to submit to your backend server here.
+          });
+        });
+      }
+  </script>
 
     <form id='demo-form' method='POST'>
      <button class="g-recaptcha"
        data-sitekey="6LfKvrMZAAAAAANCpRz3YR8PzHREf98q0zABF7hq"
-       data-callback="onSubmit" 
+       data-callback="onClick" 
        data-action="submit">Submit</button>
     </form>
+
 
 </body>
 
